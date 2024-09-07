@@ -1,4 +1,4 @@
 pool:
-name: test
+  name: test
 steps:
 - bash: echo "Hello world"
