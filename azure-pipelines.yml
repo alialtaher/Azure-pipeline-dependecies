@@ -1,13 +1,8 @@
 pool:
   name: test
-<<<<<<< HEAD
 stages: 
 - stage: first
   jobs:
   - job: A1
     steps:
-      - bash: echo "Hello world"
-=======
-steps:
-- bash: echo "Hello world"
->>>>>>> 1c6e9284d446d9ff6a3b04e361961937b97aee23
+      - bash: echo "Hello world!"
