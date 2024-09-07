@@ -39,6 +39,7 @@ stages:
               displayName: deploy backend app to DEV
 
   - stage: DeployProd
+    dependsOn: BuildApp
     displayName: Deploy to PROD environment
     jobs:
       - job: DeployFrontendProd
