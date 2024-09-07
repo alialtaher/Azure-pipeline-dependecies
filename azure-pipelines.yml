@@ -23,7 +23,7 @@ stages:
             displayName: unit tests backend
  
   - stage: DeployDev
-    dependsOn: []
+    dependsOn: BuildApp
     displayName: Deploy to DEV environment
     jobs:
         - job: DeployFrontendDev
@@ -39,15 +39,17 @@ stages:
               displayName: deploy backend app to DEV
 
   - stage: DeployProd
-    dependsOn: []
+    dependsOn: 
     displayName: Deploy to PROD environment
     jobs:
       - job: DeployFrontendProd
+        dependsOn: DeployFrontendDev
         displayName: Deploy frontend to PROD
         steps:
           - script: echo deploying frontend app to PROD
             displayName: deploy frontend app to PROD
       - job: DeployBackendProd
+        dependsOn: DeployBackendDev
         displayName: Deploy backend to PROD
         steps:
           - script: echo deploying backend app to PROD
