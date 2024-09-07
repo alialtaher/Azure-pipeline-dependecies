@@ -42,6 +42,10 @@ stages:
     dependsOn: BuildApp
     displayName: Deploy to PROD environment
     jobs:
+      - job: initialize
+        displayName: InitProd
+        steps:
+          - script: echo initializing PROD
       - job: DeployFrontendProd
         dependsOn: DeployFrontendDev
         displayName: Deploy frontend to PROD
